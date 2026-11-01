@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Raíz Café de Especialidad</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <a href="index.html" class="logo">RAÍZ</a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburguesa" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="cafe.html">Menú</a>
+      <a href="catas.html">Catas</a>
+      <a href="contacto.html" class="activo">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="seccion">
+      <div class="contenedor">
+
+        <p class="etiqueta">Visitanos</p>
+        <h1>Contacto</h1>
+
+        <div class="dos-columnas alinear-arriba">
+
+          <!-- MAPA -->
+          <div>
+            <iframe
+              class="mapa"
+              src="https://maps.google.com/maps?q=Costa+Rica+4900,+Palermo,+Buenos+Aires&z=16&output=embed"
+              title="Ubicación de Raíz en el mapa"
+              loading="lazy">
+            </iframe>
+            <p class="direccion">
+              Costa Rica 4900, Palermo, CABA<br>
+              Lun a Vie 8 a 20 h · Sáb-Dom 9 a 20 h
+            </p>
+          </div>
+
+          <!-- FORMULARIO -->
+          <form class="formulario" action="#">
+            <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
+            <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+            <textarea name="mensaje" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+            <button type="submit" class="boton">Enviar mensaje</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <div class="contenedor pie-contenido">
+      <p>Costa Rica 4900, Palermo, CABA · Lun a Vie 8 a 20 h · Sáb-Dom 9 a 20 h</p>
+      <p>Instagram · @raiz.cafe</p>
+      <p>© 2026 Raíz — Café de especialidad</p>
+    </div>
+  </footer>
+
+</body>
+</html>

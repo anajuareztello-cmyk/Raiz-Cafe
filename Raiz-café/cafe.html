@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú — Raíz Café de Especialidad</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <a href="index.html" class="logo">RAÍZ</a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburguesa" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="cafe.html" class="activo">Menú</a>
+      <a href="catas.html">Catas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- SECCIÓN 1: NUESTRO CAFÉ -->
+    <section class="seccion">
+      <div class="contenedor dos-columnas">
+        <div class="texto">
+          <p class="etiqueta">Menú</p>
+          <h1>Nuestro café</h1>
+          <p>Cada café que servimos tiene un origen propio. Elegí un origen para conocer al productor y la finca.</p>
+        </div>
+        <video class="video-foto video-ancho" autoplay muted loop playsinline poster="img/raiz-local.jpg" aria-label="Una clienta entra a Raíz, pide un café y lo recibe en el mostrador">
+  <source src="video/raiz-local.mp4" type="video/mp4">
+</video>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: ORÍGENES -->
+    <section class="seccion seccion-sin-arriba">
+      <div class="contenedor">
+
+        <div class="filtros">
+          <a href="#etiopia" class="filtro activo">Etiopía</a>
+          <a href="#colombia" class="filtro">Colombia</a>
+          <a href="#brasil" class="filtro">Brasil</a>
+        </div>
+
+        <div class="tarjetas">
+
+          <article class="tarjeta" id="etiopia">
+            <img src="img/menu-etiopia.jpg" alt="Granos de café verde de Etiopía">
+            <div class="tarjeta-texto">
+              <h3>Etiopía — Finca Idido</h3>
+              <p>Notas florales y cítricas. Proceso lavado, 1900 msnm.</p>
+              <a href="origen.html" class="boton boton-borde">Ver ficha</a>
+            </div>
+          </article>
+
+          <article class="tarjeta" id="colombia">
+            <img src="img/menu-colombia.jpg" alt="Granos y café molido de Colombia">
+            <div class="tarjeta-texto">
+              <h3>Colombia — Finca El Vergel</h3>
+              <p>Notas a caramelo y frutos rojos. Proceso honey, 1700 msnm.</p>
+              <a href="origen.html" class="boton boton-borde">Ver ficha</a>
+            </div>
+          </article>
+
+          <article class="tarjeta" id="brasil">
+            <img src="img/menu-brasil.jpg" alt="Granos de café tostado de Brasil">
+            <div class="tarjeta-texto">
+              <h3>Brasil — Fazenda Santa Inês</h3>
+              <p>Notas a chocolate y nuez. Proceso natural, 1100 msnm.</p>
+              <a href="origen.html" class="boton boton-borde">Ver ficha</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: PARA COMER -->
+    <section class="seccion seccion-alterna">
+      <div class="contenedor">
+
+        <div class="titulo-izquierda">
+          <h2>Para comer</h2>
+          <p>Pastelería de elaboración propia, todos los días.</p>
+        </div>
+
+        <div class="tarjetas tarjetas-dos">
+
+          <article class="tarjeta">
+            <img src="img/nosotros-comunidad.jpg" alt="Rollo de canela con nueces pecan">
+            <div class="tarjeta-texto">
+              <h3>Rollo de canela y nuez pecan</h3>
+              <p>Horneado en el local todas las mañanas, con glaseado suave.</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <img src="img/inicio-pasteleria.jpg" alt="Selección de pastelería del día">
+            <div class="tarjeta-texto">
+              <h3>Selección de pastelería del día</h3>
+              <p>Medialunas, scones y facturas de manteca, variables según el día.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <div class="contenedor pie-contenido">
+      <p>Costa Rica 4900, Palermo, CABA · Lun a Vie 8 a 20 h · Sáb-Dom 9 a 20 h</p>
+      <p>Instagram · @raiz.cafe</p>
+      <p>© 2026 Raíz — Café de especialidad</p>
+    </div>
+  </footer>
+
+</body>
+</html>
