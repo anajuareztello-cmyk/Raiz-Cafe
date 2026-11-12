@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda — Raíz Café de Especialidad</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <a href="index.html" class="logo">RAÍZ</a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburguesa" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="cafe.html">Menú</a>
+      <a href="catas.html">Catas</a>
+      <a href="tienda.html" class="activo">Tienda</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- SECCIÓN 1: PRESENTACIÓN DE LA TIENDA -->
+    <section class="seccion seccion-intro">
+      <div class="contenedor">
+        <p class="etiqueta">Tienda online</p>
+        <h1>Llevá Raíz a tu casa</h1>
+        <p>Los mismos cafés que servimos en el local, con su origen y su productor. Tostados cada semana en Buenos Aires.</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: PRODUCTOS + CARRITO -->
+    <!-- El carrito funciona solo con HTML y CSS: cada botón es un checkbox
+         y un contador de CSS suma los productos marcados y sus precios. -->
+    <section class="seccion seccion-sin-arriba tienda">
+      <div class="contenedor">
+
+        <div class="filtros">
+          <a href="#cafes" class="filtro activo">Café en grano</a>
+          <a href="#accesorios" class="filtro">Kits y experiencias</a>
+        </div>
+
+        <div class="tarjetas" id="cafes">
+
+          <article class="tarjeta producto" id="etiopia">
+            <img src="img/menu-etiopia.jpg" alt="Granos de café de Etiopía">
+            <div class="tarjeta-texto">
+              <h3>Etiopía — Finca Idido</h3>
+              <p>Café en grano, 250 g. Floral y cítrico, proceso lavado.</p>
+              <p class="precio">$14.500</p>
+              <input type="checkbox" id="p1" class="agregar" style="--precio: 14500">
+              <label for="p1" class="boton boton-carrito"></label>
+            </div>
+          </article>
+
+          <article class="tarjeta producto" id="colombia">
+            <img src="img/menu-colombia.jpg" alt="Granos y café molido de Colombia">
+            <div class="tarjeta-texto">
+              <h3>Colombia — Finca El Vergel</h3>
+              <p>Café en grano, 250 g. Caramelo y frutos rojos, proceso honey.</p>
+              <p class="precio">$13.500</p>
+              <input type="checkbox" id="p2" class="agregar" style="--precio: 13500">
+              <label for="p2" class="boton boton-carrito"></label>
+            </div>
+          </article>
+
+          <article class="tarjeta producto" id="brasil">
+            <img src="img/menu-brasil.jpg" alt="Granos de café tostado de Brasil">
+            <div class="tarjeta-texto">
+              <h3>Brasil — Fazenda Santa Inês</h3>
+              <p>Café en grano, 250 g. Chocolate y nuez, proceso natural.</p>
+              <p class="precio">$12.500</p>
+              <input type="checkbox" id="p3" class="agregar" style="--precio: 12500">
+              <label for="p3" class="boton boton-carrito"></label>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="tarjetas" id="accesorios">
+
+          <article class="tarjeta producto">
+            <img src="img/origen-etiopia.jpg" alt="Del fruto al grano: cerezas, grano verde, tostado y molido">
+            <div class="tarjeta-texto">
+              <h3>Kit de cata — 3 orígenes</h3>
+              <p>Etiopía, Colombia y Brasil en bolsas de 100 g, con ficha de cata.</p>
+              <p class="precio">$19.900</p>
+              <input type="checkbox" id="p4" class="agregar" style="--precio: 19900">
+              <label for="p4" class="boton boton-carrito"></label>
+            </div>
+          </article>
+
+          <article class="tarjeta producto">
+            <img src="img/menu-cafe.jpg" alt="Café filtrado en un dripper de vidrio">
+            <div class="tarjeta-texto">
+              <h3>Kit de filtrado</h3>
+              <p>Dripper de vidrio, 40 filtros de papel y guía de preparación.</p>
+              <p class="precio">$32.000</p>
+              <input type="checkbox" id="p5" class="agregar" style="--precio: 32000">
+              <label for="p5" class="boton boton-carrito"></label>
+            </div>
+          </article>
+
+          <article class="tarjeta producto">
+            <img src="img/catas.jpg" alt="Cafés servidos en una mesa de madera durante una cata">
+            <div class="tarjeta-texto">
+              <h3>Entrada a cata guiada</h3>
+              <p>Un lugar en el próximo encuentro mensual. También sirve para regalar.</p>
+              <p class="precio">$18.000</p>
+              <input type="checkbox" id="p6" class="agregar" style="--precio: 18000">
+              <label for="p6" class="boton boton-carrito"></label>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- BARRA DEL CARRITO (cuenta productos y suma el total) -->
+        <div class="carrito">
+          <p>Carrito: <span class="carrito-cantidad"></span> · Total: <span class="carrito-total"></span></p>
+          <a href="#compra" class="boton">Finalizar compra</a>
+        </div>
+
+        <!-- MENSAJE DE COMPRA (aparece al tocar "Finalizar compra").
+             Está dentro de la tienda para poder mostrar la cantidad y el total. -->
+        <div class="aviso-compra" id="compra">
+          <div class="aviso-caja">
+            <p class="etiqueta">Pedido confirmado</p>
+            <h2>¡Gracias por tu compra!</h2>
+            <p class="aviso-resumen"><span class="carrito-cantidad"></span> · Total: <span class="carrito-total"></span></p>
+            <p>Te enviamos el detalle del pedido por email. Podés retirarlo en el local de Costa Rica 4900 o recibirlo en tu casa en 48 horas.</p>
+            <a href="tienda.html" class="boton">Seguir comprando</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <div class="contenedor pie-contenido">
+      <p>Costa Rica 4900, Palermo, CABA · Lun a Vie 8 a 20 h · Sáb-Dom 9 a 20 h</p>
+      <p>Instagram · @raiz.cafe</p>
+      <p>© 2026 Raíz — Café de especialidad</p>
+    </div>
+  </footer>
+
+</body>
+</html>
