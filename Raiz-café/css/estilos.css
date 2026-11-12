@@ -461,50 +461,162 @@ p {
 .video-ancho {
   aspect-ratio: 16 / 9;
 }
-/* ===== CONTACTO: MAPA Y FORMULARIO ===== */
-.mapa {
-  width: 100%;
-  height: 340px;
-  border: 0;
-  border-radius: 4px;
-  display: block;
+
+/* ===== DETALLES DE MOVIMIENTO ===== */
+/* Los enlaces internos (#etiopia, #compra) bajan suavemente */
+html {
+  scroll-behavior: smooth;
 }
 
-.direccion {
-  margin: 12px 0 0;
-  color: #6b5f52;
+/* Las tarjetas se elevan un poco al pasar el mouse */
+.tarjeta {
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(59, 50, 38, 0.12);
 }
 
-.formulario input,
-.formulario textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--linea);
-  border-radius: 3px;
-  background-color: #ffffff;
-  font-family: var(--sans);
-  font-size: 15px;
-  color: var(--texto);
+.tarjeta img {
+  transition: transform 0.5s;
 }
 
-.formulario textarea {
-  min-height: 130px;
-  resize: vertical;
+.tarjeta:hover img {
+  transform: scale(1.05);
 }
 
-.formulario input:focus,
-.formulario textarea:focus {
-  outline: none;
+/* Que el título no quede tapado al saltar a una tarjeta */
+.tarjeta,
+.tarjetas {
+  scroll-margin-top: 24px;
+}
+
+/* ===== TIENDA ONLINE ===== */
+.tienda {
+  counter-reset: cantidad total;
+}
+
+.tienda .tarjetas + .tarjetas {
+  margin-top: 24px;
+}
+
+.producto {
+  position: relative;
+}
+
+.precio {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--marron);
+  margin-top: 12px !important;
+}
+
+/* El checkbox no se ve: se usa el botón (label) para marcarlo */
+.agregar {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Cada producto marcado suma 1 a la cantidad y su precio al total */
+.agregar:checked {
+  counter-increment: cantidad 1 total var(--precio);
+}
+
+.boton-carrito {
+  cursor: pointer;
+}
+
+.boton-carrito::before {
+  content: "Agregar al carrito";
+}
+
+/* Producto agregado: el botón cambia de texto y la tarjeta se marca */
+.agregar:checked + .boton-carrito {
+  background-color: var(--texto);
+  border-color: var(--texto);
+}
+
+.agregar:checked + .boton-carrito::before {
+  content: "Agregado ✓";
+}
+
+.producto:has(.agregar:checked) {
   border-color: var(--marron);
 }
 
-.formulario .boton {
-  align-self: flex-start;
-  cursor: pointer;
+/* Barra del carrito: queda fija abajo mientras se recorre la tienda */
+.carrito {
+  position: sticky;
+  bottom: 16px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--pie);
+  color: var(--crema);
+  padding: 14px 20px;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(59, 50, 38, 0.25);
+}
+
+.carrito p {
+  margin: 0;
+}
+
+.carrito-cantidad::after {
+  content: counter(cantidad) " productos";
+}
+
+.carrito-total::after {
+  content: "$" counter(total);
+}
+
+.carrito .boton {
+  background-color: var(--dorado);
+  border-color: var(--dorado);
+}
+
+/* Mensaje de compra: aparece solo cuando la dirección termina en #compra */
+.aviso-compra {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(58, 48, 42, 0.6);
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.aviso-compra:target {
+  display: flex;
+}
+
+.aviso-caja {
+  background-color: var(--crema);
+  padding: 40px;
+  border-radius: 4px;
+  max-width: 440px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .carrito {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Menos espacio entre la presentación y los productos */
+.seccion-intro {
+  padding-bottom: 32px;
+}
+
+.aviso-resumen {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--marron);
 }
